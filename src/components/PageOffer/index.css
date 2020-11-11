@@ -10,7 +10,8 @@
 }
 .Offer-container-body {
   width: 100%;
-  min-height: 903px;
+  height: 100vh;
+  /* min-height: 903px; */
   background-color: #eaedee;
   display: flex;
   flex-direction: column;
@@ -69,14 +70,18 @@
   display: flex;
   width: 86px;
   height: 29px;
+  font-size: 24px;
+  margin-bottom: 20px;
 }
 .offer-name {
   width: 320px;
   height: 19px;
+  font-weight: bold;
 }
 .offer-desc {
   width: 320px;
   overflow: hidden;
+  color: #999999;
 }
 .offer-avatar {
   display: flex;
@@ -89,6 +94,7 @@
   width: 50px;
   height: 50px;
   border-radius: 50%;
+  margin-right: 10px;
 }
 .offer-username-title {
   width: 79px;
@@ -104,23 +110,32 @@
   flex-direction: column;
 }
 
-.offer-ul > li {
+.offer-ul {
+  display: flex;
+  justify-content: space-between;
+  width: 320px;
+  height: 105px;
+  margin-right: 20px;
+}
+li {
   display: flex;
   justify-content: space-between;
   width: 320px;
   height: 21px;
-  margin-right: 20px;
+  margin-right: 40px;
 }
-
 .offer-span {
   width: 106px;
   height: 17px;
-  font-size: 14px;
 }
 
 .gris-clair {
   color: #999999;
+  width: 80px;
+  height: 17px;
 }
 .gris-fonce {
   color: #666666;
+  width: 180px;
+  height: 17px;
 }

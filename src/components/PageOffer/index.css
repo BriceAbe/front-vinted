@@ -1,0 +1,126 @@
+/* Route Offer */
+.Offer {
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+}
+.Offer-container-body {
+  width: 100%;
+  min-height: 903px;
+  background-color: #eaedee;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.offer-contenu {
+  width: 1340px;
+  height: 665px;
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-around;
+}
+.offer-img {
+  width: 450px;
+  height: 605px;
+}
+.offer-description {
+  width: 400px;
+  height: 605px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.offer-brand-size {
+  width: 320px;
+  height: 169px;
+}
+.offer-trait {
+  width: 320px;
+  height: 1px;
+  background-color: #eaedee;
+  margin-top: 30px;
+}
+.offer-content {
+  width: 320px;
+  height: 136px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.offer-button {
+  width: 320px;
+  height: 36px;
+  color: white;
+  background-color: #2eb0ba;
+  border: none;
+  border-radius: 5px;
+}
+
+.offer-price {
+  display: flex;
+  width: 86px;
+  height: 29px;
+}
+.offer-name {
+  width: 320px;
+  height: 19px;
+}
+.offer-desc {
+  width: 320px;
+  overflow: hidden;
+}
+.offer-avatar {
+  display: flex;
+  align-items: center;
+  width: 320px;
+  height: 50px;
+}
+
+.offer-avatar-img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+.offer-username-title {
+  width: 79px;
+  height: 19px;
+}
+
+.offer-ul {
+  width: 320px;
+  height: 105px;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.offer-ul > li {
+  display: flex;
+  justify-content: space-between;
+  width: 320px;
+  height: 21px;
+  margin-right: 20px;
+}
+
+.offer-span {
+  width: 106px;
+  height: 17px;
+  font-size: 14px;
+}
+
+.gris-clair {
+  color: #999999;
+}
+.gris-fonce {
+  color: #666666;
+}

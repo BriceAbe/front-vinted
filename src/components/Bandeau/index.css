@@ -1,0 +1,55 @@
+.bandeau-container {
+  background-image: url("./hero.jpg");
+  background-position: center;
+  width: 100%;
+  height: 455px;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.bandeau-container-card {
+  width: 1280px;
+  height: 455px;
+  display: flex;
+  align-items: center;
+}
+
+.bandeau-card {
+  width: 410px;
+  height: 270px;
+  background-color: white;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  box-shadow: 0 0 2px rgba(17, 17, 17, 0.24);
+}
+.bandeau-card-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 410px;
+  height: 270px;
+}
+.bandeau-card-text {
+  width: 308px;
+  height: 82px;
+  font-size: 34px;
+  margin-left: 30px;
+  font-size: 34px;
+  line-height: 45px;
+}
+.bandeau-card-button {
+  width: 187px;
+  height: 45px;
+  background-color: #2eb0ba;
+  color: white;
+  margin-left: 10px;
+  border: none;
+  border-radius: 10px;
+  margin-left: 30px;
+  font-size: 13px;
+}

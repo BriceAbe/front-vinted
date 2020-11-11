@@ -1,0 +1,40 @@
+.header-container {
+  width: 1280px;
+  height: 59px;
+  display: flex;
+  justify-content: space-around;
+
+  align-items: center;
+}
+.header-logo {
+  width: 78px;
+  height: 35px;
+}
+
+.header-search {
+  width: 632px;
+  height: 39px;
+  background-color: #d5dade;
+  border-radius: 10px;
+  border: none;
+  padding: 10px;
+  color: lightgray;
+}
+.header-container-bouton {
+  width: 250px;
+  height: 30px;
+}
+.header-bouton {
+  width: 115px;
+  height: 30px;
+  margin-right: 10px;
+  border-radius: 10px;
+  background-color: #fff;
+  border: 1px solid #2eb0ba;
+  color: #2eb0ba;
+}
+
+.green {
+  color: white;
+  background-color: #2eb0ba;
+}

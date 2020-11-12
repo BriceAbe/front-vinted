@@ -14,12 +14,15 @@
 .header-search {
   width: 632px;
   height: 39px;
-  background-color: #d5dade;
-  border-radius: 10px;
+  background-color: #f5f6f7;
+  border-radius: 5px;
   border: none;
   padding: 10px;
   color: lightgray;
+  outline: none;
+  font-size: 16px;
 }
+
 .header-container-bouton {
   width: 250px;
   height: 30px;
@@ -32,6 +35,7 @@
   background-color: #fff;
   border: 1px solid #2eb0ba;
   color: #2eb0ba;
+  cursor: pointer;
 }
 
 .green {

@@ -27,7 +27,6 @@ function Offer() {
     <span>En chargement..</span>
   ) : (
     <div className="App">
-      <Header />
       <PageOffer data={data} />
     </div>
   );

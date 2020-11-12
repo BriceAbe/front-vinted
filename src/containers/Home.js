@@ -23,7 +23,6 @@ function Home() {
     <span> ""En chargement..."" </span>
   ) : (
     <>
-      <Header />
       <Bandeau />
       <div className="App">
         <div className="cards-container">

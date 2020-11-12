@@ -16,10 +16,16 @@ function Header() {
           type="text"
         />
         <div className="header-container-bouton">
-          <button className="header-bouton">S'inscrire</button>
-          <button className="header-bouton">Se connecter</button>
+          <Link to="/signup">
+            <button className="header-bouton">S'inscrire</button>
+          </Link>
+          <Link to="/signin">
+            <button className="header-bouton">Se connecter</button>
+          </Link>
         </div>
-        <button className="header-bouton green">Vends articles</button>
+        <Link to="/signin">
+          <button className="header-bouton green">Vends articles</button>
+        </Link>
       </div>
     </div>
   );

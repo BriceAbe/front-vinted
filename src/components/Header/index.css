@@ -31,13 +31,24 @@
   width: 115px;
   height: 30px;
   margin-right: 10px;
-  border-radius: 10px;
+  border-radius: 5px;
   background-color: #fff;
   border: 1px solid #2eb0ba;
   color: #2eb0ba;
   cursor: pointer;
+  font-size: 12px;
 }
 
+.header-bouton-deconnecter {
+  width: 115px;
+  height: 30px;
+  margin-right: 10px;
+  border-radius: 5px;
+  background-color: #c2175b;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
 .green {
   color: white;
   background-color: #2eb0ba;

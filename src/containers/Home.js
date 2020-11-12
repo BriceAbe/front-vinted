@@ -26,9 +26,11 @@ function Home() {
       <Bandeau />
       <div className="App">
         <div className="cards-container">
-          {data.offers.map((elem) => {
-            return <Card data={elem} />;
-          })}
+          <div className="cards-direction">
+            {data.offers.map((elem, i) => {
+              return <Card key={i} data={elem} />;
+            })}
+          </div>
         </div>
       </div>
     </>

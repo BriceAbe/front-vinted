@@ -50,31 +50,41 @@ const Signup = ({ userToken }) => {
   };
 
   return (
-    <div>
-      je suis le signup -
-      <form onSubmit={handleSubmit}>
+    <div className="App">
+      <h2 className="signup-h2">S'inscrire</h2>
+      <form className="signup-form" onSubmit={handleSubmit}>
         <input
+          className="signup-input"
           type="text"
           placeholder="Nom d'utilisateur"
           onChange={handleUsernameChange}
           required
+          name="username"
           value={username}
         />
         <input
+          className="signup-input"
           type="email"
           placeholder="Email"
           onChange={handleEmailChange}
           required
+          name="email"
           value={email}
         />
         <input
+          className="signup-input"
           type="password"
           placeholder="Mot de passe"
           onChange={handlePasswordChange}
           required
+          name="password"
           value={password}
         />
-        <input type="submit" value="S'inscrire" />
+        <input
+          className="signup-input-submit"
+          type="submit"
+          value="S'inscrire"
+        />
       </form>
     </div>
   );

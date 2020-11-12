@@ -11,3 +11,74 @@
   justify-content: center;
   align-items: center;
 }
+
+/* ROUTE SIGN IN  */
+.signin-h2 {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  font-weight: 400;
+  font-size: 24px;
+}
+
+.signin-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 275px;
+  height: 181px;
+}
+
+.signin-input {
+  width: 275px;
+  height: 38px;
+  color: #f5f6f7;
+  border: none;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #fcced3;
+}
+
+.signin-input-submit {
+  width: 275px;
+  height: 45px;
+  margin-top: 30px;
+  color: white;
+  border: none;
+  background-color: #2eb0ba;
+  border-radius: 5px;
+}
+
+/* ROUTE SIGN UP  */
+
+.signup-h2 {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  font-weight: 400;
+  font-size: 24px;
+}
+
+.signup-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 275px;
+  height: 382px;
+}
+
+.signup-input {
+  width: 275px;
+  height: 38px;
+  color: #f5f6f7;
+  border: none;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #fcced3;
+}
+
+.signup-input-submit {
+  width: 275px;
+  height: 45px;
+  margin-top: 30px;
+  color: white;
+  border: none;
+  background-color: #2eb0ba;
+  border-radius: 5px;
+}

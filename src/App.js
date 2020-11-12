@@ -10,24 +10,26 @@ import Signup from "./containers/Signup";
 function App() {
   const [token, settoken] = useState("");
 
+  // Cookie.set("token", "hdhdhj");
   const userToken = (token) => {
-    Cookie.set("token", token);
-    settoken(token);
+    if (token) {
+      Cookie.set("token", token);
+      settoken(token);
+    } else {
+      Cookie.remove("token");
+      settoken(null);
+    }
   };
-
-  useEffect(() => {
-    console.log("letoken " + token);
-  }, [token]);
 
   return (
     <Router>
-      <Header />
+      <Header userToken={userToken} />
       <Switch>
         <Route path="/offer/:id">
           <Offer />
         </Route>
         <Route path="/signin">
-          <Signin />
+          <Signin userToken={userToken} />
         </Route>
         <Route path="/signup">
           <Signup userToken={userToken} />

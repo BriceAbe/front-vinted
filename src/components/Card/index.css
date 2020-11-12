@@ -1,18 +1,29 @@
 .cards-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 1280px;
+  height: 3000px;
+}
+
+.cards-direction {
   width: 1280px;
   height: 1956px;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   flex-wrap: wrap;
 }
 
 .card-container {
-  width: 247px;
+  width: 235px;
   height: 489px;
-  margin-right: 10px;
-  margin-top: 10px;
+  padding-left: 6px;
+  padding-bottom: 16px;
+  padding-right: 6px;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  margin-left: 10px;
 }
 .card-avatarusername {
   width: 235px;

@@ -1,5 +1,6 @@
 import React from "react";
 import "./index.css";
+import dechirer from "./dechirer.svg";
 
 const bandeau = () => {
   return (
@@ -17,6 +18,7 @@ const bandeau = () => {
             </div>
           </div>
         </div>
+        <div className="bandeau-img-dechirer"></div>
       </div>
     </div>
   );

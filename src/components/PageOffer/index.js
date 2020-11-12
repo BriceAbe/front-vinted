@@ -14,7 +14,7 @@ const PageOffer = ({ data }) => {
             <ul className="offer-ul">
               {data.product_details.map((elem, i) => {
                 return (
-                  <li>
+                  <li key={i}>
                     <span className="offer-span gris-clair">
                       {Object.keys(data.product_details[i])}
                     </span>

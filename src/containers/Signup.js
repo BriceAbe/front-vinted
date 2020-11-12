@@ -1,33 +1,37 @@
 import React, { useState } from "react";
+import { Link, useHistory } from "react-router-dom";
 import axios from "axios";
 
-const Signup = () => {
-  const [token, settoken] = useState("");
+const Signup = ({ userToken }) => {
   const [username, setusername] = useState("");
   const [email, setemail] = useState("");
   const [password, setpassword] = useState("");
 
   //
+  const history = useHistory();
 
+  const fetchAxios = async () => {
+    try {
+      const response = await axios.post(
+        "https://lereacteur-vinted-api.herokuapp.com/user/signup",
+        {
+          email: email,
+          username: username,
+          phone: "0607080910",
+          password: password,
+        }
+      );
+      userToken(response.data.token);
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
+
+  //
   const handleSubmit = (e) => {
-    const fetchAxios = async () => {
-      try {
-        const response = await axios.post(
-          "https://lereacteur-vinted-api.herokuapp.com/user/signup",
-          {
-            email: email,
-            username: username,
-            phone: "0607080910",
-            password: password,
-          }
-        );
-        settoken(response.data);
-      } catch (error) {
-        console.log(error.message);
-      }
-    };
     fetchAxios();
     e.preventDefault();
+    history.push("/");
   };
 
   //
@@ -45,10 +49,8 @@ const Signup = () => {
     setpassword(value);
   };
 
-  console.log(token);
   return (
     <div>
-      {" "}
       je suis le signup -
       <form onSubmit={handleSubmit}>
         <input

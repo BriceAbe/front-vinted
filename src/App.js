@@ -1,12 +1,24 @@
 import "./App.css";
+import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import Cookie from "js-cookie";
 import Offer from "./containers/Offer";
 import Home from "./containers/Home";
 import Header from "./components/Header";
-import Signin from "./components/Signin";
-import SignUp from "./containers/Signup";
+import Signin from "./containers/Signin";
 import Signup from "./containers/Signup";
 function App() {
+  const [token, settoken] = useState("");
+
+  const userToken = (token) => {
+    Cookie.set("token", token);
+    settoken(token);
+  };
+
+  useEffect(() => {
+    console.log("letoken " + token);
+  }, [token]);
+
   return (
     <Router>
       <Header />
@@ -18,7 +30,7 @@ function App() {
           <Signin />
         </Route>
         <Route path="/signup">
-          <Signup />
+          <Signup userToken={userToken} />
         </Route>
         <Route path="/">
           <Home />

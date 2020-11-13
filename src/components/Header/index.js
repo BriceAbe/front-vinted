@@ -10,8 +10,7 @@ import {
   useHistory,
 } from "react-router-dom";
 
-function Header({ userToken }) {
-  const token = Cookie.get("token");
+function Header({ userToken, token }) {
   const history = useHistory();
   const handleDeconnect = () => {
     userToken(null);

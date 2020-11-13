@@ -66,3 +66,59 @@
   bottom: 0px;
   right: 0;
 }
+
+/* DESIGN RESPONSIVE  */
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+  /* .header-container {
+    width: 977px;
+    height: 52px;
+  } */
+}
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .bandeau-container {
+    width: 100%;
+    height: 584px;
+    padding-left: 20px;
+  }
+
+  .bandeau-container-card {
+    width: 100%;
+    height: 584px;
+  }
+  .bandeau-card {
+    width: 400px;
+    height: 258px;
+  }
+}
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .bandeau-container {
+    width: 100%;
+    height: 584px;
+    padding-left: 20px;
+  }
+
+  .bandeau-container-card {
+    width: 100%;
+    height: 584px;
+  }
+  .bandeau-card {
+    width: 400px;
+    height: 258px;
+  }
+}
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .bandeau-container {
+    width: 100%;
+    height: 455px;
+  }
+
+  .bandeau-container-card {
+    width: 1280px;
+    height: 455px;
+  }
+}

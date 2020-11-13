@@ -8,12 +8,12 @@ import Header from "./components/Header";
 import Signin from "./containers/Signin";
 import Signup from "./containers/Signup";
 function App() {
-  const [token, settoken] = useState("");
+  const [token, settoken] = useState(Cookie.get("token") || null);
 
   // Cookie.set("token", "hdhdhj");
   const userToken = (token) => {
     if (token) {
-      Cookie.set("token", token);
+      Cookie.set("token", token, { expires: 1000 });
       settoken(token);
     } else {
       Cookie.remove("token");
@@ -23,7 +23,7 @@ function App() {
 
   return (
     <Router>
-      <Header userToken={userToken} />
+      <Header className="sticky" userToken={userToken} token={token} />
       <Switch>
         <Route path="/offer/:id">
           <Offer />

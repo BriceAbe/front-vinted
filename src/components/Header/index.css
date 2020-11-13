@@ -57,9 +57,9 @@
 /* DESIGN RESPONSIVE  */
 
 /* Small devices (landscape phones, 576px and up) */
-@media (min-width: 576px) {
+@media all and (max-width: 576px) {
   .header-container {
-    width: 100%;
+    width: 100vw;
     height: 44px;
     display: flex;
     justify-content: space-around;
@@ -75,7 +75,7 @@
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
   .header-container {
-    width: 100%;
+    width: 100vw;
     height: 44px;
     display: flex;
     justify-content: space-around;

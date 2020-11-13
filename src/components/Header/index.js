@@ -9,6 +9,7 @@ import {
   Link,
   useHistory,
 } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 function Header({ userToken, token }) {
   const history = useHistory();
@@ -62,6 +63,9 @@ function Header({ userToken, token }) {
         <Link to="/signin">
           <button className="header-bouton green">Vends tes articles</button>
         </Link>
+        <div className="header-menu">
+          <FontAwesomeIcon icon="bars" color=" #2eb0ba" size="2x" />
+        </div>
       </div>
     </div>
   );

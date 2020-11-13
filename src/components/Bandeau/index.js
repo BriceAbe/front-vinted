@@ -10,7 +10,9 @@ const bandeau = () => {
           <div className="bandeau-card">
             <div className="bandeau-card-wrapper">
               <div className="bandeau-card-text">
-                Prêts à faire du tri dans vos placards ?
+                <p className="bandeau-card-text-p">
+                  Prêts à faire du tri dans vos placards ?
+                </p>
               </div>
               <button className="bandeau-card-button">
                 Commencer à vendre

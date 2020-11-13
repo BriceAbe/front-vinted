@@ -10,7 +10,9 @@
   width: 78px;
   height: 35px;
 }
-
+.header-menu {
+  display: none;
+}
 .header-search {
   width: 632px;
   height: 39px;
@@ -66,10 +68,32 @@
 
     align-items: center;
   }
-
+  .header-logo {
+    position: absolute;
+    width: 78px;
+    height: 35px;
+    left: 0;
+    top: 0;
+  }
   .header-search {
-    width: 100px;
+    width: 90vw;
     height: 40px;
+    position: absolute;
+    top: 40px;
+  }
+
+  .header-container-bouton {
+    display: none;
+    width: 250px;
+    height: 30px;
+  }
+  .header-bouton {
+    display: none;
+  }
+  .header-menu {
+    display: flex;
+    position: absolute;
+    right: 10px;
   }
 }
 /* Medium devices (tablets, 768px and up) */

@@ -82,3 +82,11 @@
   background-color: #2eb0ba;
   border-radius: 5px;
 }
+
+.container-loader {
+  width: 1340px;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

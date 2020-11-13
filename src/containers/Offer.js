@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import Header from "../components/Header";
 import PageOffer from "../components/PageOffer";
+import Loader from "react-loader-spinner";
 import "../App.css";
 
 function Offer() {
@@ -24,7 +25,18 @@ function Offer() {
   }, []);
 
   return isLoading ? (
-    <span>En chargement..</span>
+    <div className="App">
+      <div className="container-loader">
+        <Loader
+          className="loader-perso"
+          type="Oval"
+          color="#00BFFF"
+          height={500}
+          width={500}
+          timeout={3000} //3 secs
+        />
+      </div>
+    </div>
   ) : (
     <div className="App">
       <PageOffer data={data} />

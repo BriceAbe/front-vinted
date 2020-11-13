@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
+import Loader from "react-loader-spinner";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Header from "../components/Header";
 import Bandeau from "../components/Bandeau";
@@ -20,7 +21,18 @@ function Home() {
     fetchData();
   }, []);
   return isLoading ? (
-    <span> ""En chargement..."" </span>
+    <div className="App">
+      <div className="container-loader">
+        <Loader
+          className="loader-perso"
+          type="Oval"
+          color="#00BFFF"
+          height={500}
+          width={500}
+          timeout={3000} //3 secs
+        />
+      </div>
+    </div>
   ) : (
     <>
       <Bandeau />

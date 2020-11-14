@@ -1,6 +1,6 @@
 # Welcome to my App Vinted - My name is Brice ABE
 
-# https://zealous-goldwasser-a525b5.netlify.app/signup
+# https://zealous-goldwasser-a525b5.netlify.app
 
 # Fonctionalité Front
 

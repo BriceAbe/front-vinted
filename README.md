@@ -1,8 +1,18 @@
-# front-vinted
+# Welcome to my App Vinted - My name is Brice ABE
 
-# Getting Started with Create React App
+# https://zealous-goldwasser-a525b5.netlify.app/signup
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Fonctionalité Front
+
+- Project crée en React hébergé sur netifly
+- Sign in ok
+- Sign up ok
+- button de deconnection ok
+- recherche d artciles en temps réel ( sans appuyer sur un boouton ) ok
+- responsive mobile et tablette ok ( chamgement de la mise en place sur le mobile)
+
+- Possibiité de visualiser un articles ok
+- détalis de l artcles selectionner ok
 
 ## Available Scripts
 

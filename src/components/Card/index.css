@@ -174,3 +174,271 @@ a {
     color: #999999;
   }
 }
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .cards-container {
+    width: 100%;
+    height: 100vh;
+  }
+
+  .cards-direction {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+  }
+
+  .card-container {
+    margin-top: 20px;
+    width: 170px;
+    height: 489px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .card-image {
+    width: 170px;
+    height: 360px;
+  }
+
+  .card-avatarusername {
+    width: 170px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+  }
+  .card-avatar-img {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  .card-avatar-title {
+    width: 59px;
+    height: 15px;
+    font-size: 12px;
+    color: #999999;
+  }
+
+  .card-container-image-infos {
+    width: 170px;
+    height: 428px;
+  }
+  .card-image {
+    width: 170px;
+    height: 360px;
+  }
+
+  .card-size-price-brand {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 170px;
+    height: 63px;
+  }
+
+  .card-price {
+    width: 170px;
+    height: 17px;
+    font-size: 14px;
+    font-weight: bold;
+    color: black;
+  }
+
+  .card-size {
+    width: 170px;
+    height: 15px;
+    font-size: 12px;
+    color: #999999;
+  }
+
+  .card-brand {
+    width: 170px;
+    height: 15px;
+    font-size: 12px;
+    color: #999999;
+  }
+}
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .cards-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 1280px;
+    height: 3000px;
+  }
+
+  .cards-direction {
+    width: 1280px;
+    height: 1956px;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .card-container {
+    width: 235px;
+    height: 489px;
+    padding-left: 6px;
+    padding-bottom: 16px;
+    padding-right: 6px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 10px;
+  }
+  .card-avatarusername {
+    width: 235px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+  }
+  .card-avatar-img {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  .card-avatar-title {
+    width: 59px;
+    height: 15px;
+    font-size: 12px;
+    color: #999999;
+  }
+
+  .card-container-image-infos {
+    width: 235px;
+    height: 428px;
+  }
+  .card-image {
+    width: 235px;
+    height: 360px;
+  }
+
+  .card-size-price-brand {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 235px;
+    height: 63px;
+  }
+
+  .card-price {
+    width: 219px;
+    height: 17px;
+    font-size: 14px;
+    font-weight: bold;
+    color: black;
+  }
+
+  .card-size {
+    width: 219px;
+    height: 15px;
+    font-size: 12px;
+    color: #999999;
+  }
+
+  .card-brand {
+    width: 219px;
+    height: 15px;
+    font-size: 12px;
+    color: #999999;
+  }
+
+  a {
+    text-decoration: none;
+  }
+}
+
+@media (min-width: 1200px) {
+  .cards-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 1280px;
+    height: 3000px;
+  }
+
+  .cards-direction {
+    width: 1280px;
+    height: 1956px;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .card-container {
+    width: 235px;
+    height: 489px;
+    padding-left: 6px;
+    padding-bottom: 16px;
+    padding-right: 6px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 10px;
+  }
+  .card-avatarusername {
+    width: 235px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+  }
+  .card-avatar-img {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  .card-avatar-title {
+    width: 59px;
+    height: 15px;
+    font-size: 12px;
+    color: #999999;
+  }
+
+  .card-container-image-infos {
+    width: 235px;
+    height: 428px;
+  }
+  .card-image {
+    width: 235px;
+    height: 360px;
+  }
+
+  .card-size-price-brand {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 235px;
+    height: 63px;
+  }
+
+  .card-price {
+    width: 219px;
+    height: 17px;
+    font-size: 14px;
+    font-weight: bold;
+    color: black;
+  }
+
+  .card-size {
+    width: 219px;
+    height: 15px;
+    font-size: 12px;
+    color: #999999;
+  }
+
+  .card-brand {
+    width: 219px;
+    height: 15px;
+    font-size: 12px;
+    color: #999999;
+  }
+
+  a {
+    text-decoration: none;
+  }
+}

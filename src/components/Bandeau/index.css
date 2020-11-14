@@ -92,7 +92,7 @@
     position: absolute;
     top: 180px;
     right: 0px;
-
+    box-shadow: none;
     display: flex;
     justify-content: center;
     align-items: center;

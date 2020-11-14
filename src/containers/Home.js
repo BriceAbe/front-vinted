@@ -6,7 +6,7 @@ import Header from "../components/Header";
 import Bandeau from "../components/Bandeau";
 import Card from "../components/Card";
 
-function Home() {
+function Home({ recherche, setrecherche }) {
   const [data, setdata] = useState([]);
   const [isLoading, setisLoading] = useState(true);
   const fetchData = async () => {
@@ -20,6 +20,7 @@ function Home() {
   useEffect(() => {
     fetchData();
   }, []);
+
   return isLoading ? (
     <div className="App">
       <div className="container-loader">
@@ -40,7 +41,13 @@ function Home() {
         <div className="cards-container">
           <div className="cards-direction">
             {data.offers.map((elem, i) => {
-              return <Card key={i} data={elem} />;
+              return elem.product_name
+                .toLowerCase()
+                .includes(recherche.toLowerCase()) ? (
+                <Card key={i} data={elem} />
+              ) : (
+                ""
+              );
             })}
           </div>
         </div>

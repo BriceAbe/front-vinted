@@ -1,5 +1,5 @@
 import "./index.css";
-import React from "react";
+import React, { useState } from "react";
 import logo from "./logo.png";
 import Cookie from "js-cookie";
 import {
@@ -11,11 +11,19 @@ import {
 } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-function Header({ userToken, token }) {
+function Header({ userToken, token, recherche, setrecherche }) {
+  const [menu, setmenu] = useState(false);
+
   const history = useHistory();
+
   const handleDeconnect = () => {
     userToken(null);
     history.push("/");
+  };
+
+  const handleMenu = () => {
+    setmenu(true);
+    console.log(1);
   };
   return token ? (
     <div className="App">
@@ -27,6 +35,8 @@ function Header({ userToken, token }) {
           className="header-search"
           placeholder="Recherche des articles"
           type="text"
+          value={recherche}
+          onChange={(e) => setrecherche(e.target.value)}
         />
         <div className="header-container-bouton">
           <button
@@ -51,6 +61,8 @@ function Header({ userToken, token }) {
           className="header-search"
           placeholder="Recherche des articles"
           type="text"
+          value={recherche}
+          onChange={(e) => setrecherche(e.target.value)}
         />
         <div className="header-container-bouton">
           <Link to="/signup">
@@ -63,9 +75,16 @@ function Header({ userToken, token }) {
         <Link to="/signin">
           <button className="header-bouton green">Vends tes articles</button>
         </Link>
-        <div className="header-menu">
-          <FontAwesomeIcon icon="bars" color=" #2eb0ba" size="2x" />
+        {/* <button onClick={() => handleMenu()}>vfjfkjf</button> */}
+        <div className="header-menu" onClick={() => handleMenu()}>
+          <FontAwesomeIcon
+            icon="bars"
+            color=" #2eb0ba"
+            size="2x"
+            onClick={() => handleMenu()}
+          />
         </div>
+        {menu ? <div className="cadreMenu">coucou</div> : ""}
       </div>
     </div>
   );

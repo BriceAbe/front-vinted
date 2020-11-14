@@ -20,7 +20,7 @@
   border-radius: 5px;
   border: none;
   padding: 10px;
-  color: lightgray;
+  color: black;
   outline: none;
   font-size: 16px;
 }
@@ -94,6 +94,12 @@
     display: flex;
     position: absolute;
     right: 10px;
+  }
+
+  .cadreMenu {
+    background-color: red;
+    width: 200px;
+    height: 200px;
   }
 }
 /* Medium devices (tablets, 768px and up) */

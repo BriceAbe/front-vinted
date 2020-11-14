@@ -12,6 +12,7 @@ import { library } from "@fortawesome/fontawesome-svg-core";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 library.add(faBars);
 function App() {
+  const [recherche, setrecherche] = useState("");
   const [token, settoken] = useState(Cookie.get("token") || null);
 
   // Cookie.set("token", "hdhdhj");
@@ -27,7 +28,13 @@ function App() {
 
   return (
     <Router>
-      <Header className="sticky" userToken={userToken} token={token} />
+      <Header
+        className="sticky"
+        userToken={userToken}
+        token={token}
+        recherche={recherche}
+        setrecherche={setrecherche}
+      />
       <Switch>
         <Route path="/offer/:id">
           <Offer />
@@ -39,7 +46,7 @@ function App() {
           <Signup userToken={userToken} />
         </Route>
         <Route path="/">
-          <Home />
+          <Home recherche={recherche} setrecherche={setrecherche} />
         </Route>
       </Switch>
     </Router>

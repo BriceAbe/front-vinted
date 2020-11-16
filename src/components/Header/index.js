@@ -1,7 +1,7 @@
 import "./index.css";
 import React, { useState } from "react";
 import logo from "./logo.png";
-
+import Cookie from "js-cookie";
 import { Link, useHistory } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -67,9 +67,14 @@ function Header({ userToken, token, recherche, setrecherche }) {
           </Link>
         </div>
         <Link to="/signin">
-          <button className="header-bouton green">Vends tes articles</button>
+          <button
+            onClick={() => Cookie.set("versVente", "yes")}
+            className="header-bouton green"
+          >
+            Vends tes articles
+          </button>
         </Link>
-        {/* <button onClick={() => handleMenu()}>vfjfkjf</button> */}
+
         <div className="header-menu" onClick={() => handleMenu()}>
           <FontAwesomeIcon
             icon="bars"

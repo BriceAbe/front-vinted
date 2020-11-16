@@ -3,7 +3,6 @@ import "./index.css";
 import { Link } from "react-router-dom";
 
 function Card({ data }) {
-  // console.log(data.owner.account.avatar.hasOwnProperty("url"));
   const avatar = Object.keys(data.owner.account);
   console.log(avatar.indexOf("avatar"));
   return (

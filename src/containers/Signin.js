@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
+import Cookie from "js-cookie";
 import axios from "axios";
 import "./signin.css";
 
@@ -22,7 +23,12 @@ const Signin = ({ userToken }) => {
   const handleConnexion = (e) => {
     fetchAxios();
     e.preventDefault();
-    history.push("/");
+    if (Cookie.get("versVente")) {
+      Cookie.remove("versVente");
+      history.push("/publish");
+    } else {
+      history.push("/");
+    }
   };
   const handleChangeEmail = (e) => {
     const value = e.target.value;

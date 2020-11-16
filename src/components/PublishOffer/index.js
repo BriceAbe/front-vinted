@@ -1,10 +1,13 @@
 import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
 import "./index.css";
 import axios from "axios";
 import Cookie from "js-cookie";
+import { useDropzone } from "react-dropzone";
 
 const PublishOffer = () => {
-  const [image, setImage] = useState({});
+  const [image, setImage] = useState([]);
+  const [preview, setPreview] = useState([]);
   const [titre, settitre] = useState();
   const [description, setdescription] = useState();
   const [marque, setmarque] = useState();
@@ -25,6 +28,8 @@ const PublishOffer = () => {
   formData.append("color", couleur);
   formData.append("picture", image);
 
+  const history = useHistory();
+
   const handleSubmit = async (e) => {
     const token = Cookie.get("token");
     e.preventDefault();
@@ -39,8 +44,29 @@ const PublishOffer = () => {
       }
     );
     console.log(response.data);
+    setImage("");
+    settitre("");
+    setdescription("");
+    setmarque("");
+    settaille("");
+    setcouleur("");
+    setetat("");
+    setlieu("");
+    setprice("");
+    setPreview("");
+    history.push("/");
   };
 
+  const handleChange = (event) => {
+    if (event.target.files && event.target.files[0]) {
+      setPreview({
+        image: URL.createObjectURL(event.target.files[0]),
+      });
+      setImage(event.target.files[0]);
+      console.log(image.image);
+    }
+  };
+  console.log(preview.image);
   return (
     <div className="PublishOffer-container-all">
       <div className="PublishOffer-contenu">
@@ -49,18 +75,46 @@ const PublishOffer = () => {
         <form className="publish-form" onSubmit={handleSubmit}>
           <div className="publish-offer-file">
             <div className="publish-offer-file-cadre">
-              <label className="label-file">Choisir une image</label>
+              <div
+                className={
+                  preview.image ? "publish-label-none" : "publish-label"
+                }
+              >
+                <span className="publish-spanPlus">+</span>{" "}
+                <span className="publish-span">Ajoute une photo</span>
+              </div>
+
               <input
-                className="input-file"
+                className="publish-input-file"
                 type="file"
-                onChange={(e) => setImage(e.target.files[0])}
+                onChange={handleChange}
               />
+              <img
+                className={
+                  preview.image
+                    ? "publish-img-preview"
+                    : "publish-img-preview-none"
+                }
+                src={preview.image}
+                alt="preview"
+              />
+              <button
+                className={
+                  preview.image
+                    ? "publish-img-remove-button"
+                    : "publish-img-remove-button-none"
+                }
+                onClick={() => setPreview([])}
+              >
+                X
+              </button>
             </div>
           </div>
 
           <div className="publish-offer-sectionTitle">
             <div className="publish-title">
               <h4 className="publish-h4">Titre</h4>
+
               <input
                 className="publish-input"
                 type="text"

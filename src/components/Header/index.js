@@ -1,14 +1,8 @@
 import "./index.css";
 import React, { useState } from "react";
 import logo from "./logo.png";
-import Cookie from "js-cookie";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link,
-  useHistory,
-} from "react-router-dom";
+
+import { Link, useHistory } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 function Header({ userToken, token, recherche, setrecherche }) {
@@ -46,7 +40,7 @@ function Header({ userToken, token, recherche, setrecherche }) {
             Se déconnecter
           </button>
         </div>
-        <Link to="/signin">
+        <Link to="/publish">
           <button className="header-bouton green">Vends tes articles</button>
         </Link>
       </div>

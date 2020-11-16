@@ -1,8 +1,7 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 import Loader from "react-loader-spinner";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import Header from "../components/Header";
+
 import Bandeau from "../components/Bandeau";
 import Card from "../components/Card";
 
@@ -13,6 +12,7 @@ function Home({ recherche, setrecherche }) {
     const response = await axios.get(
       "https://lereacteur-vinted-api.herokuapp.com/offers"
     );
+
     setdata(response.data);
     setisLoading(false);
   };
@@ -28,8 +28,8 @@ function Home({ recherche, setrecherche }) {
           className="loader-perso"
           type="Oval"
           color="#00BFFF"
-          height={500}
-          width={500}
+          height={100}
+          width={100}
           timeout={3000} //3 secs
         />
       </div>

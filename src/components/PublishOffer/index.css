@@ -1,0 +1,160 @@
+/* Route Offer */
+
+.PublishOffer-container-all {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #eaedee;
+}
+
+.PublishOffer-contenu {
+  width: 1280px;
+  height: 1279px;
+  display: flex;
+  flex-direction: column;
+}
+.publish-form {
+  display: flex;
+  flex-direction: column;
+  width: 1280px;
+  height: 1190px;
+  margin-top: 30px;
+  align-items: center;
+  justify-content: space-around;
+}
+.publish-offer-file {
+  width: 1280px;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+}
+.publish-offer-file-cadre {
+  width: 1232px;
+  height: 202px;
+  border: 1px dashed #ebedee;
+  border-radius: 3x;
+}
+.publish-offer-sectionTitle {
+  width: 1280px;
+  height: 222px;
+  display: flex;
+  flex-direction: column;
+
+  background-color: white;
+}
+.publish-title {
+  display: flex;
+  width: 1280px;
+  height: 74px;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ebedee;
+}
+.publish-desc {
+  width: 1280px;
+  height: 148px;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 20px;
+}
+
+.publish-offer-sectionDescription {
+  width: 1280px;
+  height: 366px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+}
+
+.publish-offer-sectionPrice {
+  width: 1280px;
+  height: 129px;
+  display: flex;
+  padding-top: 20px;
+  justify-content: space-between;
+
+  background-color: white;
+}
+
+.publish-offer-sectionButton {
+  width: 1280px;
+  height: 143px;
+  display: flex;
+
+  justify-content: flex-end;
+  align-items: flex-end;
+  background-color: #eaedee;
+}
+
+.publish-offer-button {
+  width: 79px;
+  height: 43px;
+  color: white;
+  background-color: #2eb0ba;
+  border: none;
+  border-radius: 5px;
+}
+
+.publish-input {
+  width: 620px;
+  height: 25px;
+  border: none;
+  border-bottom: 1px solid #ebedee;
+  outline: none;
+  margin-right: 30px;
+}
+.publish-input-textarea {
+  width: 620px;
+  height: 100px;
+  border: none;
+  border-bottom: 1px solid #ebedee;
+  text-align: left;
+
+  resize: none;
+  outline: none;
+  margin-right: 30px;
+}
+
+.publish-input:focus {
+  border-bottom: 1px solid #00b1ca;
+}
+.publish-input-textarea:focus {
+  border-bottom: 1px solid #00b1ca;
+}
+
+.publish-h4 {
+  font-weight: normal;
+  margin-left: 20px;
+}
+
+.label-file {
+  cursor: pointer;
+  color: #00b1ca;
+  font-weight: bold;
+}
+.label-file:hover {
+  color: #25a5c4;
+  cursor: pointer;
+}
+
+.input-file {
+  opacity: 1;
+  position: absolute;
+  right: 650px;
+  cursor: pointer;
+}
+.publish-offer-file-input {
+  border: 2px solid #2eb0ba;
+  width: 79px;
+  height: 43px;
+  color: #2eb0ba;
+  display: none;
+}

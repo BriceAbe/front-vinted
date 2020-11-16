@@ -1,6 +1,5 @@
 import React from "react";
 import "./index.css";
-import dechirer from "./dechirer.svg";
 
 const bandeau = () => {
   return (

@@ -1,16 +1,24 @@
 import React from "react";
 import "./index.css";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function Card({ data }) {
+  // console.log(data.owner.account.avatar.hasOwnProperty("url"));
+  const avatar = Object.keys(data.owner.account);
+  console.log(avatar.indexOf("avatar"));
   return (
-    <Link className="card-container" to={`/offer/${data._id}`}>
+    <Link className="card-container" to={data._id ? `/offer/${data._id}` : "/"}>
       <div className="card-avatarusername">
-        <img
-          className="card-avatar-img"
-          src={data.owner.account.avatar.url}
-          alt=""
-        />
+        {avatar.indexOf("avatar") !== -1 ? (
+          <img
+            className="card-avatar-img"
+            src={data.owner.account.avatar.url}
+            alt=""
+          />
+        ) : (
+          ""
+        )}
+
         <span className="card-avatar-title">{data.owner.account.username}</span>
       </div>
       <div className="card-container-image-infos">

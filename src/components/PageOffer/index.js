@@ -2,8 +2,8 @@ import React from "react";
 import "./index.css";
 
 const PageOffer = ({ data }) => {
-  const ETAT = Object.keys(data.product_details[0]);
-  console.log(ETAT);
+  const avatar = Object.keys(data.owner.account);
+  console.log(avatar.indexOf("avatar"));
   return (
     <div className="Offer-container-body">
       <div className="offer-contenu">
@@ -31,11 +31,16 @@ const PageOffer = ({ data }) => {
             <div className="offer-name">{data.product_name}</div>
             <div className="offer-desc">{data.product_description}</div>
             <div className="offer-avatar">
-              <img
-                className="offer-avatar-img"
-                src={data.owner.account.avatar.url}
-                alt="avatar"
-              />
+              {avatar.indexOf("avatar") !== -1 ? (
+                <img
+                  className="offer-avatar-img"
+                  src={data.owner.account.avatar.url}
+                  alt="avatar"
+                />
+              ) : (
+                ""
+              )}
+
               <span className="offer-username-title">
                 {data.owner.account.username}
               </span>

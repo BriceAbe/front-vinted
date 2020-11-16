@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import axios from "axios";
 
 const Signup = ({ userToken }) => {
@@ -7,7 +7,6 @@ const Signup = ({ userToken }) => {
   const [email, setemail] = useState("");
   const [password, setpassword] = useState("");
 
-  //
   const history = useHistory();
 
   const fetchAxios = async () => {
@@ -21,6 +20,7 @@ const Signup = ({ userToken }) => {
           password: password,
         }
       );
+      console.log(response.data);
       userToken(response.data.token);
     } catch (error) {
       console.log(error.message);

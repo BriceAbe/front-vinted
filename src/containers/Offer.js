@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+
 import { useParams } from "react-router-dom";
 import axios from "axios";
-import Header from "../components/Header";
+
 import PageOffer from "../components/PageOffer";
 import Loader from "react-loader-spinner";
 import "../App.css";
@@ -11,7 +11,7 @@ function Offer() {
   const { id } = useParams();
   const [isLoading, setisLoading] = useState(true);
   const [data, setdata] = useState([]);
-  console.log(id);
+
   const fetchData = async () => {
     const response = await axios.get(
       `https://lereacteur-vinted-api.herokuapp.com/offer/${id}`

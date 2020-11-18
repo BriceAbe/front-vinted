@@ -68,7 +68,7 @@ const Payment = ({ token, productData }) => {
               <span className="span-bold">
                 {completed ? "Total réglé" : "Total"}
               </span>
-              <span className="span-bold">{total} €</span>
+              <span className="span-bold">{Number(total).toFixed(2)} €</span>
             </div>
           </div>
           <div className="payment-card">

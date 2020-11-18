@@ -1,9 +1,11 @@
 import React from "react";
 import "./index.css";
+import { Link } from "react-router-dom";
 
-const PageOffer = ({ data }) => {
+const PageOffer = ({ data, setisPageHome }) => {
+  setisPageHome(false);
   const avatar = Object.keys(data.owner.account);
-  console.log(avatar.indexOf("avatar"));
+
   return (
     <div className="Offer-container-body">
       <div className="offer-contenu">
@@ -46,7 +48,15 @@ const PageOffer = ({ data }) => {
               </span>
             </div>
           </div>
-          <button className="offer-button">Acheter</button>
+
+          <Link
+            to={{
+              pathname: "/payment",
+              state: { productData: data },
+            }}
+          >
+            <button className="offer-button">Acheter</button>
+          </Link>
         </div>
       </div>
     </div>

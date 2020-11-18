@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
-
-const Signup = ({ userToken }) => {
+import Cookie from "js-cookie";
+const Signup = ({ userToken, isPageHome, setisPageHome }) => {
+  const [check, setcheck] = useState("");
   const [username, setusername] = useState("");
   const [email, setemail] = useState("");
   const [password, setpassword] = useState("");
 
+  setisPageHome(false);
   const history = useHistory();
 
   const fetchAxios = async () => {
@@ -20,7 +22,7 @@ const Signup = ({ userToken }) => {
           password: password,
         }
       );
-      console.log(response.data);
+      Cookie.set("id", response.data._id);
       userToken(response.data.token);
     } catch (error) {
       console.log(error.message);
@@ -80,12 +82,33 @@ const Signup = ({ userToken }) => {
           name="password"
           value={password}
         />
+
+        <div className="signup-newletter-container">
+          <div className="signup-checkbox-container">
+            <input
+              className="signup-checkbox"
+              name="isGoing"
+              type="checkbox"
+              checked={check}
+              onChange={(e) => setcheck(e.target.check)}
+            />
+            <span>S'inscrire à notre newsletter</span>
+          </div>
+          <p>
+            En m'inscrivant je confirme avoir lu et accepté les Termes &
+            Conditions et Politique de Confidentialité de Vinted. Je confirme
+            avoir au moins 18 ans.
+          </p>
+        </div>
         <input
           className="signup-input-submit"
           type="submit"
           value="S'inscrire"
         />
       </form>
+      <span className="signup-deja-connecte">
+        Tu as déjà un compte ? Connecte-toi !
+      </span>
     </div>
   );
 };

@@ -1,6 +1,12 @@
+@font-face {
+  font-family: "Maison Neue";
+  src: local("Maison Neue"), url(./assets/css/fonts.css) format("opentype");
+}
+
 * {
   margin: 0;
   box-sizing: border-box;
+  font-family: "Maison Neue";
 }
 
 .App {
@@ -84,6 +90,34 @@
   background-color: #2eb0ba;
   border-radius: 5px;
 }
+.signup-newletter-container {
+  width: 275px;
+  height: 123px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.signup-checkbox {
+  width: 26px;
+  height: 26px;
+}
+.signup-checkbox-container {
+  width: 255px;
+  height: 19px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 30px;
+}
+.signup-checkbox-container span {
+  font-size: 16px;
+  color: #666666;
+}
+
+.signup-newletter-container p {
+  font-size: 12px;
+  color: #999999;
+}
 
 .container-loader {
   width: 1340px;
@@ -91,4 +125,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.signup-deja-connecte {
+  color: #2cb1ba;
+  font-size: 12px;
+  margin-top: 10px;
+}
+
+.signup-inscris-toi {
+  color: #2cb1ba;
+  font-size: 12px;
+  margin-top: 20px;
 }

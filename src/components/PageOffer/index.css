@@ -64,6 +64,7 @@
   background-color: #2eb0ba;
   border: none;
   border-radius: 5px;
+  cursor: pointer;
 }
 
 .offer-price {

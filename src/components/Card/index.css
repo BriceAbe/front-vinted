@@ -406,6 +406,7 @@ a {
   .card-image {
     width: 235px;
     height: 360px;
+    object-fit: cover;
   }
 
   .card-size-price-brand {

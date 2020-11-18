@@ -1,7 +1,8 @@
 import React from "react";
 import PublishOffer from "../components/PublishOffer";
 
-const Publish = () => {
+const Publish = ({ token, setisPageHome }) => {
+  setisPageHome(false);
   return <PublishOffer />;
 };
 

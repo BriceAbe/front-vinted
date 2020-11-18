@@ -1,37 +1,52 @@
 import "./index.css";
-import React, { useState } from "react";
+import React from "react";
 import logo from "./logo.png";
 import Cookie from "js-cookie";
 import { Link, useHistory } from "react-router-dom";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-function Header({ userToken, token, recherche, setrecherche }) {
-  const [menu, setmenu] = useState(false);
-
+function Header({
+  userToken,
+  token,
+  rechercheTitre,
+  setrechercheTitre,
+  tri,
+  settri,
+  prixMin,
+  setprixMin,
+  prixMax,
+  setprixMax,
+  isPageHome,
+  setisPageHome,
+}) {
   const history = useHistory();
-
+  setisPageHome(true);
   const handleDeconnect = () => {
     userToken(null);
     history.push("/");
   };
 
-  const handleMenu = () => {
-    setmenu(true);
-    console.log(1);
-  };
   return token ? (
     <div className="App">
-      <div className="header-container">
+      <div
+        className={
+          isPageHome ? "header-container" : "header-container-not-home"
+        }
+      >
         <Link to="/">
           <img className="header-logo" src={logo} alt="logo" />
         </Link>
-        <input
-          className="header-search"
-          placeholder="Recherche des articles"
-          type="text"
-          value={recherche}
-          onChange={(e) => setrecherche(e.target.value)}
-        />
+        <div className="header-search">
+          <FontAwesomeIcon icon="search" color="grey" />
+          <input
+            className="header-search-input"
+            placeholder="Recherche des articles"
+            type="text"
+            value={rechercheTitre}
+            onChange={(e) => setrechercheTitre(e.target.value)}
+          />
+        </div>
         <div className="header-container-bouton">
           <button
             className="header-bouton-deconnecter"
@@ -44,20 +59,59 @@ function Header({ userToken, token, recherche, setrecherche }) {
           <button className="header-bouton green">Vends tes articles</button>
         </Link>
       </div>
+      <div
+        className={
+          isPageHome
+            ? "header-filter-container"
+            : "header-filter-container-not-home"
+        }
+      >
+        <select
+          className="header-select"
+          value={tri}
+          onChange={(e) => settri(e.target.value)}
+        >
+          <option valeur="cro"> Tri Croissant</option>
+          <option valeur="dec">Tri Décroissant</option>
+        </select>
+
+        <input
+          className="header-filter"
+          type="number"
+          placeholder="Prix Min"
+          value={prixMin}
+          onChange={(e) => setprixMin(e.target.value)}
+        />
+        <input
+          className="header-filter"
+          type="number"
+          placeholder="Prix Max"
+          value={prixMax}
+          onChange={(e) => setprixMax(e.target.value)}
+        />
+      </div>
     </div>
   ) : (
     <div className="App">
-      <div className="header-container">
+      <div
+        className={
+          isPageHome ? "header-container" : "header-container-not-home"
+        }
+      >
         <Link to="/">
           <img className="header-logo" src={logo} alt="logo" />
         </Link>
-        <input
-          className="header-search"
-          placeholder="Recherche des articles"
-          type="text"
-          value={recherche}
-          onChange={(e) => setrecherche(e.target.value)}
-        />
+        <div className="header-search">
+          <FontAwesomeIcon icon="search" color="grey" />
+          <input
+            className="header-search-input"
+            placeholder="Recherche des articles"
+            type="text"
+            value={rechercheTitre}
+            onChange={(e) => setrechercheTitre(e.target.value)}
+          />
+        </div>
+
         <div className="header-container-bouton">
           <Link to="/signup">
             <button className="header-bouton">S'inscrire</button>
@@ -74,16 +128,37 @@ function Header({ userToken, token, recherche, setrecherche }) {
             Vends tes articles
           </button>
         </Link>
+      </div>
+      <div
+        className={
+          isPageHome
+            ? "header-filter-container"
+            : "header-filter-container-not-home"
+        }
+      >
+        <select
+          className="header-select"
+          value={tri}
+          onChange={(e) => settri(e.target.value)}
+        >
+          <option valeur="cro"> Tri Croissant</option>
+          <option valeur="dec">Tri Décroissant</option>
+        </select>
 
-        <div className="header-menu" onClick={() => handleMenu()}>
-          <FontAwesomeIcon
-            icon="bars"
-            color=" #2eb0ba"
-            size="2x"
-            onClick={() => handleMenu()}
-          />
-        </div>
-        {menu ? <div className="cadreMenu">coucou</div> : ""}
+        <input
+          className="header-filter"
+          type="number"
+          placeholder="Prix Min"
+          value={prixMin}
+          onChange={(e) => setprixMin(e.target.value)}
+        />
+        <input
+          className="header-filter"
+          type="number"
+          placeholder="Prix Max"
+          value={prixMax}
+          onChange={(e) => setprixMax(e.target.value)}
+        />
       </div>
     </div>
   );

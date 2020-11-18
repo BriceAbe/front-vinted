@@ -1,7 +1,10 @@
 import React from "react";
 import "./index.css";
+import { Link } from "react-router-dom";
+import Cookie from "js-cookie";
 
 const bandeau = () => {
+  const token = Cookie.get("token");
   return (
     <div className="App">
       <div className="bandeau-container">
@@ -13,9 +16,26 @@ const bandeau = () => {
                   Prêts à faire du tri dans vos placards ?
                 </p>
               </div>
-              <button className="bandeau-card-button">
-                Commencer à vendre
-              </button>
+
+              {token ? (
+                <Link to="/Publish">
+                  <button
+                    className="bandeau-card-button"
+                    onClick={() => Cookie.remove("versVente")}
+                  >
+                    Commencer à vendre
+                  </button>
+                </Link>
+              ) : (
+                <Link to="/Signin">
+                  <button
+                    className="bandeau-card-button"
+                    onClick={() => Cookie.set("versVente", "yes")}
+                  >
+                    Commencer à vendre
+                  </button>
+                </Link>
+              )}
             </div>
           </div>
         </div>

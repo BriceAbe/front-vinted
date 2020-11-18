@@ -3,10 +3,11 @@ import { useHistory } from "react-router-dom";
 import "./index.css";
 import axios from "axios";
 import Cookie from "js-cookie";
-import { useDropzone } from "react-dropzone";
 
-const PublishOffer = () => {
+const PublishOffer = ({ setisPageHome }) => {
   const [image, setImage] = useState([]);
+  const [check, setCheck] = useState(false);
+
   const [preview, setPreview] = useState([]);
   const [titre, settitre] = useState();
   const [description, setdescription] = useState();
@@ -34,27 +35,31 @@ const PublishOffer = () => {
     const token = Cookie.get("token");
     e.preventDefault();
 
-    const response = await axios.post(
-      "https://lereacteur-vinted-api.herokuapp.com/offer/publish",
-      formData,
-      {
-        headers: {
-          authorization: "Bearer " + token,
-        },
-      }
-    );
-    console.log(response.data);
-    setImage("");
-    settitre("");
-    setdescription("");
-    setmarque("");
-    settaille("");
-    setcouleur("");
-    setetat("");
-    setlieu("");
-    setprice("");
-    setPreview("");
-    history.push("/");
+    try {
+      const response = await axios.post(
+        "https://lereacteur-vinted-api.herokuapp.com/offer/publish",
+        formData,
+        {
+          headers: {
+            authorization: "Bearer " + token,
+          },
+        }
+      );
+
+      setImage("");
+      settitre("");
+      setdescription("");
+      setmarque("");
+      settaille("");
+      setcouleur("");
+      setetat("");
+      setlieu("");
+      setprice("");
+      setPreview("");
+      history.push("/");
+    } catch (error) {
+      console.log(error.message);
+    }
   };
 
   const handleChange = (event) => {
@@ -63,14 +68,12 @@ const PublishOffer = () => {
         image: URL.createObjectURL(event.target.files[0]),
       });
       setImage(event.target.files[0]);
-      console.log(image.image);
     }
   };
-  console.log(preview.image);
   return (
     <div className="PublishOffer-container-all">
       <div className="PublishOffer-contenu">
-        <h2>Vends ton article</h2>
+        <h2 className="PublishOffer-h2">Vends ton article</h2>
 
         <form className="publish-form" onSubmit={handleSubmit}>
           <div className="publish-offer-file">
@@ -188,16 +191,32 @@ const PublishOffer = () => {
               />
             </div>
           </div>
-          <div className="publish-offer-sectionPrice">
-            <h4 className="publish-h4">Prix</h4>
-            <input
-              className="publish-input"
-              type="text"
-              placeholder="0,00 €"
-              value={price}
-              onChange={(e) => setprice(e.target.value)}
-            />
+          <div className="publish-offer-sectionPrice-container">
+            <div className="publish-offer-sectionPrice">
+              <h4 className="publish-h4">Prix</h4>
+
+              <div className="publish-offer-sectioncheckbox">
+                <input
+                  className="publish-input-price"
+                  type="text"
+                  placeholder="0,00 €"
+                  value={price}
+                  onChange={(e) => setprice(e.target.value)}
+                />
+
+                <div className="publish-offer-input-checkbox">
+                  <input
+                    className="signup-checkbox"
+                    type="checkbox"
+                    checked={check}
+                    onChange={(e) => setCheck(e.target.check)}
+                  />
+                  <span>Je suis intéressé(e) par les échanges</span>
+                </div>
+              </div>
+            </div>
           </div>
+
           <div className="publish-offer-sectionButton">
             <button className="publish-offer-button" type="submit">
               Ajouter

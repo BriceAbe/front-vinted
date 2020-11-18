@@ -7,17 +7,21 @@ import PageOffer from "../components/PageOffer";
 import Loader from "react-loader-spinner";
 import "../App.css";
 
-function Offer() {
+function Offer({ setisPageHome }) {
   const { id } = useParams();
   const [isLoading, setisLoading] = useState(true);
   const [data, setdata] = useState([]);
-
+  setisPageHome(false);
   const fetchData = async () => {
-    const response = await axios.get(
-      `https://lereacteur-vinted-api.herokuapp.com/offer/${id}`
-    );
-    setdata(response.data);
-    setisLoading(false);
+    try {
+      const response = await axios.get(
+        `https://lereacteur-vinted-api.herokuapp.com/offer/${id}`
+      );
+      setdata(response.data);
+      setisLoading(false);
+    } catch (error) {
+      console.log(error.message);
+    }
   };
 
   useEffect(() => {
@@ -39,7 +43,7 @@ function Offer() {
     </div>
   ) : (
     <div className="App">
-      <PageOffer data={data} />
+      <PageOffer data={data} setisPageHome={setisPageHome} />
     </div>
   );
 }

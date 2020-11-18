@@ -5,21 +5,34 @@ import Loader from "react-loader-spinner";
 import Bandeau from "../components/Bandeau";
 import Card from "../components/Card";
 
-function Home({ recherche, setrecherche }) {
+function Home({ rechercheTitre, tri, prixMin, prixMax, setisPageHome }) {
   const [data, setdata] = useState([]);
   const [isLoading, setisLoading] = useState(true);
-  const fetchData = async () => {
-    const response = await axios.get(
-      "https://lereacteur-vinted-api.herokuapp.com/offers"
-    );
+  setisPageHome(true);
+  let trier = "";
 
-    setdata(response.data);
-    setisLoading(false);
+  if (tri === "Tri Croissant" || tri === "") {
+    trier = "price-asc";
+  } else {
+    trier = "price-desc";
+  }
+
+  const fetchData = async () => {
+    try {
+      const response = await axios.get(
+        `https://lereacteur-vinted-api.herokuapp.com/offers?title=${rechercheTitre}&priceMin=${prixMin}&priceMax=${prixMax}&sort=${trier}`
+      );
+
+      setdata(response.data);
+      setisLoading(false);
+    } catch (error) {
+      console.log(error.message);
+    }
   };
 
   useEffect(() => {
     fetchData();
-  }, []);
+  }, [tri, prixMin, prixMax, rechercheTitre]);
 
   return isLoading ? (
     <div className="App">
@@ -43,7 +56,7 @@ function Home({ recherche, setrecherche }) {
             {data.offers.map((elem, i) => {
               return elem.product_name
                 .toLowerCase()
-                .includes(recherche.toLowerCase()) ? (
+                .includes(rechercheTitre.toLowerCase()) ? (
                 <Card key={i} data={elem} />
               ) : (
                 ""

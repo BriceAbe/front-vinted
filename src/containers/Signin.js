@@ -2,22 +2,28 @@ import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import Cookie from "js-cookie";
 import axios from "axios";
-import "./signin.css";
 
-const Signin = ({ userToken }) => {
+const Signin = ({ userToken, isPageHome, setisPageHome }) => {
+  setisPageHome(false);
   const [email, setemail] = useState("");
   const [password, setpassword] = useState("");
   const history = useHistory();
   const fetchAxios = async () => {
-    const response = await axios.post(
-      "https://lereacteur-vinted-api.herokuapp.com/user/login",
-      {
-        email: email,
-        password: password,
-      }
-    );
-    console.log(response.data);
-    userToken(response.data.token);
+    try {
+      const response = await axios.post(
+        "https://lereacteur-vinted-api.herokuapp.com/user/login",
+        {
+          email: email,
+          password: password,
+        }
+      );
+
+      Cookie.set("id", response.data._id);
+
+      userToken(response.data.token);
+    } catch (error) {
+      console.log(error.messge);
+    }
   };
 
   const handleConnexion = (e) => {
@@ -68,6 +74,9 @@ const Signin = ({ userToken }) => {
           value="Se connecter"
         />
       </form>
+      <span className="signup-inscris-toi">
+        Pas encore de compte ? Inscris-toi !
+      </span>
     </div>
   );
 };

@@ -8,12 +8,18 @@ import Header from "./components/Header";
 import Signin from "./containers/Signin";
 import Signup from "./containers/Signup";
 import Publish from "./containers/Publish";
+import PaymentRoute from "./containers/PaymentRoute";
 
 import { library } from "@fortawesome/fontawesome-svg-core";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
-library.add(faBars);
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
+
+library.add(faSearch);
 function App() {
-  const [recherche, setrecherche] = useState("");
+  const [isPageHome, setisPageHome] = useState(false);
+  const [rechercheTitre, setrechercheTitre] = useState("");
+  const [prixMin, setprixMin] = useState("");
+  const [prixMax, setprixMax] = useState("");
+  const [tri, settri] = useState("");
   const [token, settoken] = useState(Cookie.get("token") || null);
 
   const userToken = (token) => {
@@ -32,24 +38,63 @@ function App() {
         className="sticky"
         userToken={userToken}
         token={token}
-        recherche={recherche}
-        setrecherche={setrecherche}
+        rechercheTitre={rechercheTitre}
+        setrechercheTitre={setrechercheTitre}
+        tri={tri}
+        settri={settri}
+        prixMin={prixMin}
+        setprixMin={setprixMin}
+        prixMax={prixMax}
+        setprixMax={setprixMax}
+        isPageHome={isPageHome}
+        setisPageHome={setisPageHome}
       />
       <Switch>
         <Route path="/offer/:id">
-          <Offer />
+          <Offer isPageHome={isPageHome} setisPageHome={setisPageHome} />
         </Route>
         <Route path="/signin">
-          <Signin userToken={userToken} />
+          <Signin
+            userToken={userToken}
+            isPageHome={isPageHome}
+            setisPageHome={setisPageHome}
+          />
         </Route>
         <Route path="/signup">
-          <Signup userToken={userToken} />
+          <Signup
+            userToken={userToken}
+            isPageHome={isPageHome}
+            setisPageHome={setisPageHome}
+          />
         </Route>
         <Route path="/publish">
-          <Publish userToken={userToken} />
+          <Publish
+            token={token}
+            isPageHome={isPageHome}
+            setisPageHome={setisPageHome}
+          />
+        </Route>
+        <Route path="/payment">
+          <PaymentRoute
+            token={token}
+            isPageHome={isPageHome}
+            setisPageHome={setisPageHome}
+          />
         </Route>
         <Route path="/">
-          <Home recherche={recherche} setrecherche={setrecherche} />
+          <Home
+            rechercheTitre={rechercheTitre}
+            setrechercheTitre={setrechercheTitre}
+            tri={tri}
+            settri={settri}
+            prixMin={prixMin}
+            setprixMin={setprixMin}
+            prixMax={prixMax}
+            setprixMax={setprixMax}
+            isPageHome={isPageHome}
+            setisPageHome={setisPageHome}
+            token={token}
+          />
         </Route>
       </Switch>
     </Router>

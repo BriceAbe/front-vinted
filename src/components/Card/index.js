@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 function Card({ data }) {
   const avatar = Object.keys(data.owner.account);
-  console.log(avatar.indexOf("avatar"));
+
   return (
     <Link className="card-container" to={data._id ? `/offer/${data._id}` : "/"}>
       <div className="card-avatarusername">
@@ -33,4 +33,3 @@ function Card({ data }) {
 }
 
 export default Card;
-// ${elem._id}

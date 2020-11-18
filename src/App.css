@@ -1,12 +1,12 @@
-@font-face {
+/* @font-face {
   font-family: "Maison Neue";
   src: local("Maison Neue"), url(./assets/css/fonts.css) format("opentype");
-}
+} */
 
 * {
   margin: 0;
   box-sizing: border-box;
-  font-family: "Maison Neue";
+  /* font-family: "Maison Neue"; */
 }
 
 .App {

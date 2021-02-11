@@ -25,10 +25,7 @@ Clone du stie web Vinted
 
 ## Screenshots
 
-<img
-		width="400"
-		alt="Capture 1"
-		src="https://res.cloudinary.com/dqhr2l0wr/image/upload/v1613058214/Capture_d_e%CC%81cran_2021-02-11_a%CC%80_16.06.27_dxrzhj.png">
+
 <img
 		width="400"
 		alt="Capture 2"

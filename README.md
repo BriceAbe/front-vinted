@@ -45,10 +45,7 @@ Clone du stie web Vinted
 		width="400"
 		alt="Capture 5"
 		src="https://res.cloudinary.com/dqhr2l0wr/image/upload/v1613057677/Capture_d_e%CC%81cran_2021-02-11_a%CC%80_16.08.00_gk6rpj.png">		
-<img
-		width="400"
-		alt="Capture 6"
-		src="https://res.cloudinary.com/dqhr2l0wr/image/upload/v1613057677/Capture_d_e%CC%81cran_2021-02-11_a%CC%80_16.10.24_uqwno3.png">		
+	
 
 	
 		
